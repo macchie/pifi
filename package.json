@@ -1,0 +1,56 @@
+{
+  "name": "pifi",
+  "version": "1.0.1",
+  "author": "macchie @macchie",
+  "bin": {
+    "pifi": "./bin/run"
+  },
+  "bugs": "https://github.com/macchie/pifi/issues",
+  "dependencies": {
+    "@oclif/command": "^1.5.13",
+    "@oclif/config": "^1.12.12",
+    "@oclif/plugin-help": "^2.1.6",
+    "node-static": "^0.7.11",
+    "sudo-js": "^1.0.2",
+    "tslib": "^1.9.3",
+    "ws": "^7.0.0"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.22.0",
+    "@types/node": "^10.14.6",
+    "globby": "^8.0.2",
+    "ts-node": "^8.1.0",
+    "typescript": "^3.4.5"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/www",
+    "/lib",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "homepage": "https://github.com/macchie/pifi",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "oclif": {
+    "commands": "./lib/commands",
+    "bin": "pifi",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "macchie/pifi",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "types": "lib/index.d.ts"
+}
